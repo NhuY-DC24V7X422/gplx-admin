@@ -13,7 +13,7 @@ dayjs.locale('vi');
 // Bọc toàn bộ trang:
 // - ConfigProvider: antd hiện tiếng Việt + màu chủ đạo giống app Flutter
 // - AntApp: để dùng message/notification của antd
-// - QueryClientProvider: React Query (gọi API, cache dữ liệu) – từ ngày 11 mới dùng nhiều
+// - QueryClientProvider: React Query (gọi API, cache dữ liệu)
 export default function Providers({ children }: { children: React.ReactNode }) {
   // useState để chỉ tạo QueryClient 1 lần, không tạo lại mỗi lần render
   const [queryClient] = useState(

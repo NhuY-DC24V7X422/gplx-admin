@@ -1,6 +1,5 @@
 // Hàm gọi API dùng ở PHÍA TRÌNH DUYỆT.
 // Trình duyệt chỉ gọi route của Next.js (/api/...), không gọi thẳng NestJS.
-// Ngày 11 thêm hàm api() gọi qua /api/proxy cho các trang quản trị.
 
 // Lỗi có mã `code` giống NestJS (vd: NOT_ADMIN) để màn hình hiện đúng thông báo
 export class ApiError extends Error {

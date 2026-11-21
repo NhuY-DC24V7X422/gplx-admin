@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { logout } from '@/lib/api-client';
 
 // Trang chủ tạm sau khi đăng nhập.
-// Ngày 11 thay bằng layout có menu, ngày 15 thêm biểu đồ tổng quan.
 export default function HomePage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -24,7 +23,7 @@ export default function HomePage() {
         <Result
           status="success"
           title="Đăng nhập quản trị thành công"
-          subTitle="Trang tổng quan và quản lý câu hỏi sẽ làm ở các ngày tiếp theo."
+          subTitle="Trang tổng quan và quản lý câu hỏi đang được xây dựng."
           extra={
             <Button icon={<LogoutOutlined />} onClick={onLogout} loading={loading}>
               Đăng xuất
