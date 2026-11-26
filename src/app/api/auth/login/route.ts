@@ -6,7 +6,6 @@ import {
   setAuthCookies,
 } from '@/lib/server/nest';
 
-// POST /api/auth/login  (route của Next.js, không phải NestJS)
 // Trình duyệt gửi { email, password } -> Next.js gọi NestJS /auth/login
 // -> lưu token vào cookie httpOnly -> chỉ trả thông tin user cho trình duyệt.
 export async function POST(req: NextRequest) {
