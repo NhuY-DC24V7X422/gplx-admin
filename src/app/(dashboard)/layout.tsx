@@ -2,8 +2,10 @@
 
 import {
   DashboardOutlined,
+  DollarOutlined,
   LogoutOutlined,
   QuestionCircleOutlined,
+  WarningOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, Typography } from 'antd';
 import Link from 'next/link';
@@ -18,6 +20,16 @@ const MENU = [
     icon: <QuestionCircleOutlined />,
     label: <Link href="/questions">Câu hỏi</Link>,
   },
+  {
+    key: '/traffic-signs',
+    icon: <WarningOutlined />,
+    label: <Link href="/traffic-signs">Biển báo</Link>,
+  },
+  {
+    key: '/penalties',
+    icon: <DollarOutlined />,
+    label: <Link href="/penalties">Mức phạt</Link>,
+  }
 ];
 
 // Khung chung của các trang quản trị: menu bên trái, nội dung bên phải.
@@ -31,8 +43,9 @@ export default function DashboardLayout({
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
 
-  // đang ở /questions/abc thì vẫn tô sáng mục "Câu hỏi"
-  const selected = pathname.startsWith('/questions') ? '/questions' : '/';
+  const selected =
+    MENU.find((item) => item.key !== '/' && pathname.startsWith(item.key))
+      ?.key ?? '/';
 
   async function onLogout() {
     setLoading(true);
